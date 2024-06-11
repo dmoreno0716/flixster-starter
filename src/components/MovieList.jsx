@@ -9,11 +9,10 @@ const MovieList = () => {
         method: 'GET',
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMjM1NDJhNGYwZGVlNTY4MTIyZWFlNjgyZDkxNzQwMSIsInN1YiI6IjY2Njc2NjM5NDZkNzU0MzNhMWRkYjRjYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mvBontNTONt-nrmYgFGh_vqqaT4bTkktfG9COH9PEJQ'
         }
       };
       
-      fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+      fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key${import.meta.env.VITE_API_KEY}`, options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
