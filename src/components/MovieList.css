@@ -1,3 +1,49 @@
-.movies{
+.MovieList{
     display:flex;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap:70px;
+    padding: 30px 30px 30px 30px;
+    flex-direction: row;
+    align-items: flex-start;
+}
+#sort{
+    text-align: end;
+    padding:90px 90px 20px 20px;
+    display: inline-flex;
+}
+
+#search{
+    text-align: left;
+    padding: 90px 90px 20px 120px;
+    display: inline-flex;
+}
+
+header{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 5%, rgba(0,212,255,1) 100%);
+    border-top:dotted;
+}
+
+#loadMore{
+    align-self: end;
+}
+
+h1{
+    font-size: clamp(36px,14.8732394366px + 4.2253521127vw,96px);
+    font-family: Graphik;
+}
+
+footer{
+    background-color: white;
+    text-align: left;
+}
+
+#loadMore{
+    align-self: center;
+    padding:20px 20px 20px 20px;
+}
+
+footer{
+    padding:10px;
 }
