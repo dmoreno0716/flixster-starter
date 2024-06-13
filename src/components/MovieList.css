@@ -1,4 +1,5 @@
 .MovieList{
+.MovieList{
     display:flex;
     display: inline-flex;
     flex-wrap: wrap;

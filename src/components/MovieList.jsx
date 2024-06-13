@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import MovieCard from './MovieCard'
 import './MovieList.css'
@@ -238,5 +239,41 @@ const MovieList = ({query, filter}) => {
 
     )
 }
+
+
+
+   // const options = {
+    //     method: 'GET',
+    //     headers: {
+    //       accept: 'application/json',
+    //     }
+    //   };
+      
+    //   fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key${import.meta.env.VITE_API_KEY}`, options)
+    //     .then(response => response.json())
+    //     .then(response => console.log(response))
+    //     .catch(err => console.error(err));
+
+
+    // const playlistContainer = document.querySelector("main");
+    // data.playlists.forEach((playlist) => {
+    //   const card = document.createElement("div");
+    //   card.classList.add("container");
+    //   card.setAttribute("data-playlist-id", playlist.playlistID.toString());
+    //   card.innerHTML = `<img class = "art" src = "${playlist.playlist_art}"></img>
+    //     <div class = "cards" ></div>
+    //        <label ${playlist.playlistID}></label>
+    //        <h3>${playlist.playlist_name}</h3>
+    //        <p>${playlist.playlist_creator}</p>
+    //        <span class="heart" id="heart${playlist.playlistID}" onclick="likePlaylist(${playlist.playlistID})">&#9825;</span>
+    //        <span id="counter${playlist.playlistID}">${playlist.likeCount}</span>
+    //        <span id = "trash">&#128465;</span>`;
+ 
+    //   playlistContainer.appendChild(card);
+    //   card.onclick = function () {
+    //     openModal(playlist);
+    //   };
+    // });
+       
 
 export default MovieList;
