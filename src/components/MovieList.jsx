@@ -19,6 +19,7 @@ const MovieList = ({ query, setWatchList }) => {
   //fetch movies and cache them in cachedMovies
   useEffect(() => {
     fetchMovies();
+    console.log("hellooooooooo")
   }, [page, inputValue]);
 
   //Filter and Sort when fetchMovies is completed or when the filter/sort options change
@@ -74,15 +75,15 @@ const MovieList = ({ query, setWatchList }) => {
 
   // FETCHES MOVIES FROM API
   const fetchMovies = async () => {
+    console.log("fetching")
     const api_Key = import.meta.env.VITE_API_KEY;
-    let url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_Key}&sort_by=${query}&page=${page}`;
-
+    // let temp = `https://api.themoviedb.org/3/search/movie?api_key=ae0c9eb79052f3cd5b7408f808ea8e04&query=kingdom&page=1`;
+      let url;
     if (searchQuery) {
-      url = `https://api.themoviedb.org/3/search/movie?api_key=${api_Key}&query=${encodeURIComponent(
-        searchQuery,
-      )}&page=${page}`;
+      url = `https://api.themoviedb.org/3/search/movie?api_key=${api_Key}&query=${searchQuery}&page=${page}`;
+    } else{
+      url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_Key}&sort_by=${query}&page=${page}`;
     }
-
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -90,10 +91,10 @@ const MovieList = ({ query, setWatchList }) => {
       }
       const data = await response.json();
 
-      let finalResults = [...cachedMovies, ...data.results];
-
-      setCachedMovies(finalResults);
-      setMovies(finalResults);
+      let finalResults = [cachedMovies, ...data.results];
+      console.log(finalResults)
+      setCachedMovies([cachedMovies, ...data.results]);
+      setMovies([cachedMovies, ...data.results]);
       setFetchedCount((prev) => prev + 1);
     } catch (error) {
       console.error("Error: ", error);
@@ -130,10 +131,11 @@ const MovieList = ({ query, setWatchList }) => {
   //FUNCTION FOR WHEN SUBMIT IS CLICKED
 
   const handleInputChange = (event) => {
-    // console.log("test")
+    event.preventDefault();
     const newValue = event.target.value;
     setInputValue(newValue);
     setSearchQuery(newValue);
+    console.log(newValue);
   };
 
   const handleCardClick = (movie) => {
@@ -141,7 +143,6 @@ const MovieList = ({ query, setWatchList }) => {
     setIsModalOpen(true);
     setMovieClicked(movie);
   };
-
   return (
     <div>
       {isModalOpen && (
@@ -158,7 +159,9 @@ const MovieList = ({ query, setWatchList }) => {
               type="text"
               onChange={handleInputChange}
             />
-            <button id="submit" onClick={handleInputChange}>
+            <button id="submit"
+            //  onClick={handleInputChange}
+            >
               Submit
             </button>
           </form>
