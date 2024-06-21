@@ -259,7 +259,10 @@ const MovieList = ({ query, setWatchList }) => {
       <button id="loadMore" onClick={LoadMore}>
         Load More
       </button>
-      <footer>&copy; Copyright by Davey :D</footer>
+      <footer>
+        <span>&copy; Copyright by Davey :D</span>
+        <span> About Me: David "Davey" Moreno, Florida International University in Miami, FL, Sophomore, Rising Junior</span>
+      </footer>
     </div>
   );
 };
