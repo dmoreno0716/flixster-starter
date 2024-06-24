@@ -6,6 +6,8 @@ Estimated time spent: 19 hours spent in total
 
 ### Application Features
 
+https://notnetflix.onrender.com/
+
 #### CORE FEATURES
 
 
@@ -42,7 +44,7 @@ Estimated time spent: 19 hours spent in total
   - [ ] The sidebar displays the user's favorited and watched movies
 
 ### Walkthrough Video
-https://www.kapwing.com/videos/6674933123fc6a92338d0a49
+https://youtu.be/2sizcqdolvY
 
 ### Reflection
 
